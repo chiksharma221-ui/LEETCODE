@@ -2,7 +2,8 @@ class Solution {
 public:
     int compress(vector<char>& chars) {
         int n=chars.size();
-        int i=0,index=0;
+        int i=0;
+        int index=0;
         while(i<n)
         {
             char curr_char=chars[i];
@@ -18,7 +19,7 @@ public:
             if(count>1)
             {
                 string s=to_string(count);
-                for(char &ch :s)
+                for(char &ch : s)
                 {
                     chars[index]=ch;
                     index++;
