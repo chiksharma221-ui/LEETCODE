@@ -4,13 +4,12 @@ public:
         int n=s.size();
         for(int i=0;i<n;i+=2*k)
         {
-            int left=i;
-            int right=min(i+k-1,n-1);
-            while(left<right)
+            if(n-i<k)
             {
-                swap(s[left],s[right]);
-                left++;
-                right--;
+                reverse(s.begin()+i,s.end());
+            }
+            else{
+                reverse(s.begin()+i,s.begin()+i+k);
             }
         }
         return s;
